@@ -1,0 +1,2 @@
+# Energy-aware-routing-for-innocuous-data-transmission-in-wireless-sensor-network
+Energy-aware routing for innocuous data transmission in Wireless Sensor Networks (WSNs) is a routing strategy that focuses on transmitting normal, non-sensitive sensor data while minimizing the energy consumed by sensor nodes. Since WSN nodes operate on limited battery power, energy-efficient communication is essential to extend the network.
