@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAWGAN Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>VAWGAN Malicious Node Detection</h1>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/network">Network</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2>Malicious Node Detection</h2>
+
+    <p>
+        VAWGAN analyzes sensor node behavior and identifies suspicious
+        or malicious nodes in the wireless sensor network.
+    </p>
+
+    <br>
+
+    <div class="card">
+
+        <h3>Detection Result</h3>
+
+        <h1 style="color:red;">
+            {{ malicious }}
+        </h1>
+
+        <p>Malicious Node(s) Detected</p>
+
+    </div>
+
+    <br>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <tr>
+            <th>Total Nodes</th>
+            <th>Active Nodes</th>
+            <th>Malicious Nodes</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>20</td>
+            <td>{{ 20 - malicious }}</td>
+            <td>{{ malicious }}</td>
+            <td>Detection Completed</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <a href="/routing" class="btn">
+        Continue to NPOA Routing
+    </a>
+
+</div>
+
+<footer>
+    <p>MCA Final Year Project</p>
+</footer>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

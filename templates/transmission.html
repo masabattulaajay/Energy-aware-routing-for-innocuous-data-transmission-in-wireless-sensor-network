@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Data Transmission</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Secure Data Transmission</h1>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/routing">Routing</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2>Send Secure Message</h2>
+
+    <p>
+        Enter a message to simulate secure transmission through the
+        selected energy-efficient route.
+    </p>
+
+    <form method="POST">
+
+        <label><b>Sensor Data</b></label>
+
+        <br><br>
+
+        <textarea
+            name="message"
+            rows="6"
+            cols="60"
+            placeholder="Enter sensor data..."
+            required></textarea>
+
+        <br><br>
+
+        <button type="submit" class="btn">
+            Encrypt & Transmit
+        </button>
+
+    </form>
+
+    {% if encrypted %}
+
+    <br>
+
+    <div class="card">
+
+        <h3>Transmission Successful</h3>
+
+        <p><b>Encrypted Data</b></p>
+
+        <textarea rows="6" cols="60" readonly>{{ encrypted }}</textarea>
+
+        <br><br>
+
+        <table border="1" cellpadding="10">
+
+            <tr>
+                <th>Source</th>
+                <td>Node 1</td>
+            </tr>
+
+            <tr>
+                <th>Destination</th>
+                <td>Node 10</td>
+            </tr>
+
+            <tr>
+                <th>Route</th>
+                <td>Node 1 → Node 4 → Node 7 → Node 10</td>
+            </tr>
+
+            <tr>
+                <th>Status</th>
+                <td style="color:green;"><b>Data Transmitted Successfully</b></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <br>
+
+    <a href="/result" class="btn">
+        View Performance
+    </a>
+
+    {% endif %}
+
+</div>
+
+<footer>
+    <p>MCA Final Year Project | Secure WSN Communication</p>
+</footer>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPOA Routing</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>NPOA Optimal Routing</h1>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/network">Network</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2>Optimal Route Selection</h2>
+
+    <p>
+        NPOA selects the best energy-efficient and secure route
+        by avoiding malicious nodes detected by VAWGAN.
+    </p>
+
+    <br>
+
+    <div class="card">
+
+        <h3>Selected Route</h3>
+
+        <h2 style="color:green;">
+            {{ route }}
+        </h2>
+
+        <p>
+            This route has the highest remaining energy and the
+            shortest transmission distance.
+        </p>
+
+    </div>
+
+    <br>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <tr>
+            <th>Source Node</th>
+            <th>Destination Node</th>
+            <th>Route Status</th>
+            <th>Energy Efficient</th>
+        </tr>
+
+        <tr>
+            <td>Node 1</td>
+            <td>Node 10</td>
+            <td>Optimal Route Selected</td>
+            <td>Yes</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <a href="/transmission" class="btn">
+        Continue to Secure Transmission
+    </a>
+
+</div>
+
+<footer>
+    <p>Energy-Aware Secure Data Transmission in WSN</p>
+</footer>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
